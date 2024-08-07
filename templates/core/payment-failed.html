@@ -1,25 +1,26 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <!-- Bootstrap CSS -->
+    <title>Payment Failed</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Sign Up</h2>
-        <form method="POST" action="{% url 'userauths:sign-in' %}">
-            {% csrf_token %}
-            <div class="form-group">
-                {{ form.as_p }}
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
-        </form>
+        <div class="alert alert-danger text-center" role="alert">
+            <h4 class="alert-heading">Payment Failed</h4>
+            <p>We're sorry, but your payment could not be processed.</p>
+            <hr>
+            <p>Please try again or contact customer support if the issue persists.</p>
+        </div>
+        <div class="text-center">
+            <a href="{% url 'core:checkout' %}" class="btn btn-primary">Try Again</a>
+            <a href="{% url 'core:index' %}" class="btn btn-secondary">Return to Home</a>
+        </div>
     </div>
- 
-    <!-- Bootstrap JS and dependencies -->
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

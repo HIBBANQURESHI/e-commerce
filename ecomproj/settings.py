@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'paypal.standard.ipn',
     'core',
     'userauths',
 ]
@@ -136,4 +137,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'userauths.User'
 
+PAYPAL_RECEIVER_EMAIL ='sb-nf4ku32054043@business.example.com'
+PAYPAL_TEST = True  
 
